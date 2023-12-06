@@ -1,40 +1,28 @@
-#pragma once
+#ifndef Employee_h
+#define Employee_h
+
+#include "GlobalHeader.h"
 #include "Company.h"
-namespace Infectonator {
-	class Employee
-	{
-	public:
-		int ID;
-		int tourNumber;
 
-		enum  ZombificationState {
-			Sane = 0,
-			Incubating,
-			Zombified,
-		};
+class Employee : public Company
+{
+private:	
+	int infectionRate;
+	int incubationTime;
+	int incubationFinishTime = 2;
+	int numberOfInfected;
+public:
+	
+	
+	void HandleInfection();
 
-		struct Employees {
-			ZombificationState type;
-			bool IsInfected;
-		};
-		void HandleInfection() {
-			tourNumber += 1;
-
-		}
-
-		bool CheckIsZombified() {
-			for (i, sizeof employeeList, i++) {
-				if (employeeList[i].type == Zombified)
-				{
-					return true;
-				}
-			}
-			
-
-		}
+	bool CheckIsZombified(int index);
 		
-		void SetNewZombieficationState() {
+	void SetNewZombieficationState();
 
-		}
-	};
-}
+	int numberGenerator(int max);
+
+	int numberInfected();
+};
+
+#endif
