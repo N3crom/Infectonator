@@ -31,6 +31,7 @@ void Company::GameRun()
 	employeeList[0].type = Incubating;
 
 	while (tourNumber > 28 || allInfected != true) {
-
+		
+		
 	}
 }

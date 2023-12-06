@@ -2,14 +2,14 @@
 #include "Company.h"
 #include "Employee.h"
 
-namespace Infectonator {
-	int main()
-	{
-		GameRun();
 
-		std::cout << "Hello World!\n";
-	}
+int main()
+{
+	Company company;
+	company.GameRun();
 
+	std::cout << "Hello World!\n";
 }
+
 
 

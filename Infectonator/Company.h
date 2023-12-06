@@ -1,3 +1,5 @@
+#ifndef Company_h
+#define Company_h
 #include "GlobalHeader.h"
 
 class Company
@@ -26,3 +28,4 @@ public:
 
 };
 
+#endif

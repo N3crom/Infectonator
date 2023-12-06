@@ -6,7 +6,7 @@ void Employee::HandleInfection() {
 	
 	if (incubationTime < incubationFinishTime)
 	{
-		incubationTime+1;
+		incubationTime+=1;
 		if (incubationTime == incubationFinishTime) {
 			incubationTime = 0;
 		}
@@ -24,6 +24,7 @@ bool Employee::CheckIsZombified(int index)
 
 
 }
+
 int Employee::numberInfected() {
 	for (int i = 0; sizeof employeeList; i += 1) {
 		if (CheckIsZombified(employeeList[i].iD) == true)
@@ -34,9 +35,10 @@ int Employee::numberInfected() {
 }
 
 
-int numberGenerator(int max)
+int Employee::numberGenerator(int max)
 {
-	return (rand() % (max + 1));
+	srand(static_cast<unsigned int>(std::time(nullptr)));
+	return (rand() % max);
 }
 
 

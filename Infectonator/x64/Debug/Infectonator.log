@@ -1,0 +1,5 @@
+﻿  Employee.cpp
+  Infectonator.cpp
+  Génération de code en cours...
+C:\Users\m_manenq\Documents\GitHub\Infectonator\Infectonator\Employee.cpp(26): warning C4715: 'Employee::CheckIsZombified' : les chemins de contrôle ne retournent pas tous une valeur
+  Infectonator.vcxproj -> C:\Users\m_manenq\Documents\GitHub\Infectonator\x64\Debug\Infectonator.exe
