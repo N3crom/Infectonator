@@ -9,6 +9,7 @@ int main()
 	company.GameRun();
 
 	std::cout << "Hello World!\n";
+	return 0;
 }
 
 

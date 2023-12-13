@@ -7,7 +7,7 @@ void Company::MakeEmpolyee() {
 	for (int i = 0; i < 100; i = i + 1) {
 		employeeList[i].iD = i;
 		employeeList[i].IsInfected = false;
-		employeeList[i].type = Sane;
+		employeeList[i].state = Sane;
 	}
 }
 
@@ -15,9 +15,12 @@ void Company::GameRun()
 {
 	MakeEmpolyee();
 	bool allInfected = false;
+	employeeList[0].IsInfected = true;
+	employeeList[0].state = Incubating;
 	while (true) {
 		for (int index = 0; sizeof employeeList; index += 1)
 		{
+			
 			if (employeeList[index].IsInfected == true)
 			{
 				allInfected = true;
@@ -27,10 +30,12 @@ void Company::GameRun()
 			}
 		}
 		}
-	employeeList[0].IsInfected = true;
-	employeeList[0].type = Incubating;
-
-	while (tourNumber > 28 || allInfected != true) {
+	
+	if (dayNumber == 28 || infectedCount == employees.size()) {
+		std::cout << "Game over!" << std::endl;
+		break;
+	}
+	while (dayNumber > 28 || allInfected != true) {
 		
 		
 	}

@@ -4,20 +4,20 @@
 void Employee::HandleInfection() {
 
 	
-	if (incubationTime < incubationFinishTime)
-	{
-		incubationTime+=1;
-		if (incubationTime == incubationFinishTime) {
-			incubationTime = 0;
-		}
+	incubationTime++;
+	if (incubationTime == 2) {
+		SetNewZombieficationState(Incubating);
 	}
-	tourNumber += 1;
+	else if (incubationTime == 3) {
+		SetNewZombieficationState(Zombified);
+	}
+	dayNumber += 1;
 }
 
 bool Employee::CheckIsZombified(int index)
 {
 	
-	if (employeeList[index].type == Zombified)
+	if (employeeList[index].state == Zombified)
 	{
 		return employeeList[index].IsInfected = true;
 	}
@@ -42,9 +42,10 @@ int Employee::numberGenerator(int max)
 }
 
 
-void Employee::SetNewZombieficationState()
+void Employee::SetNewZombieficationState(ZombificationState newState)
 {
-	cout << "Tour:" <<  tourNumber <<"\n In the company we have" << "zombies";
+	state = newState;
+	cout << "Tour:" << dayNumber <<"\n In the company we have" << "zombies";
 	infectionRate = numberGenerator(numberOfInfected);
 }
 

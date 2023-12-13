@@ -5,20 +5,23 @@
 class Company
 {
 public:
-	int tourNumber;
+	int dayNumber;
 	
 
 	enum  ZombificationState {
-		Sane = 0,
+		Sane,
 		Incubating,
 		Zombified,
 	};
 	struct Employees {
-		ZombificationState type;
+		ZombificationState state;
 		int iD;
 		bool IsInfected;
 
 	};
+
+	ZombificationState state;
+
 	Employees employeeList[100]; 
 
 	void MakeEmpolyee();

@@ -9,7 +9,7 @@ class Employee : public Company
 private:	
 	int infectionRate;
 	int incubationTime;
-	int incubationFinishTime = 2;
+	
 	int numberOfInfected;
 public:
 	
@@ -18,7 +18,7 @@ public:
 
 	bool CheckIsZombified(int index);
 		
-	void SetNewZombieficationState();
+	void SetNewZombieficationState(ZombificationState newState);
 
 	int numberGenerator(int max);
 
