@@ -7,8 +7,7 @@
 class Employee : public Company
 {
 private:	
-	int infectionRate;
-	int incubationTime;
+	
 	
 	int numberOfInfected;
 public:
@@ -20,9 +19,8 @@ public:
 		
 	void SetNewZombieficationState(ZombificationState newState);
 
-	int numberGenerator(int max);
+	
 
-	int numberInfected();
 };
 
 #endif

@@ -17,18 +17,21 @@ public:
 		ZombificationState state;
 		int iD;
 		bool IsInfected;
+		int incubationTime;
 
 	};
 
 	ZombificationState state;
 
-	Employees employeeList[100]; 
+	Employees employeeList[100];
+
+	int numberGenerator(int max);
 
 	void MakeEmpolyee();
 	
 	void GameRun();
 	
-
+	void CallHandleInfection();
 };
 
 #endif

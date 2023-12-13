@@ -5,10 +5,11 @@
 
 int main()
 {
+	std::cout << "Hello World!\n";
 	Company company;
 	company.GameRun();
 
-	std::cout << "Hello World!\n";
+	
 	return 0;
 }
 
