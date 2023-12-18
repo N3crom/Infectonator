@@ -5,7 +5,7 @@
 void Company::MakeEmpolyee() {
 	
 
-	for (int i = 0; i < 100; i = i + 1) {
+	for (int i = 0; i < 100; i++) {
 		employeeList[i].iD = i;
 		employeeList[i].IsInfected = false;
 		employeeList[i].state = Sane;
@@ -19,10 +19,16 @@ int Company::numberGenerator(int max)
 	return (rand() % max);
 }
 
+
+
 void Company::CallHandleInfection() {
 	
-	Employee employee;
+	Employee employee = Employee();
 	employee.HandleInfection();
+
+	Employee* employee2 = new Employee();
+	(*employee2).HandleInfection();
+	employee2->HandleInfection();
 	
 }
 
@@ -35,15 +41,18 @@ void Company::GameRun()
 	
 	cout << "debug1\n";
 
-	for (int day = 1; day <= 28; ++day) {
+	for (int day = 1; day <= 28; day++) {
 		int zombieCount = 0;
-		for (int index = 0; sizeof employeeList; index += 1)
+		for (Employee employee : employeeList)
 		{
-			if (employeeList[index].state == Zombified) {
-				zombieCount+=1;
+			if (employee.state == Zombified) {
+				zombieCount += 1;
+
+				cout << zombieCount;
 			}
 		}
-		cout << "debug1\n";
+		cout << zombieCount;
+		cout << "debug2\n";
 		CallHandleInfection();
 		
 		cout << "Day " << day << ": Infected employees: " << zombieCount << endl;
@@ -62,9 +71,6 @@ void Company::GameRun()
 			
 		}
 		
-		
-		
-
 	}
 	cout << "debug2\n";
 	

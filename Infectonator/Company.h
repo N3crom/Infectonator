@@ -13,6 +13,7 @@ public:
 		Incubating,
 		Zombified,
 	};
+
 	struct Employees {
 		ZombificationState state;
 		int iD;
